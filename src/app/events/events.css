@@ -1,0 +1,28 @@
+.create{
+    width: 20vw;
+    /* border-top-width: medium; */
+    padding: 10px 50px;
+     margin-top: 2.5%; 
+    /* align-items: center; */
+    /* position: absolute; */
+    position: relative;
+    border: double;
+    background:lightblue;
+    /* top: 18%; */
+    display: inline-table;
+    font-size: x-large;
+    left: 30%;
+    border-radius: 5px;
+}
+@media screen and (max-width: 605px) {
+    .create{
+    position: absolute;
+    /* top: 25%; */
+}
+}
+@media screen and  (min-width: 606px) and (max-width: 715px){
+    .create{
+        position: absolute;
+        top: 35%;
+    }
+}

@@ -1,0 +1,113 @@
+ .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 36px;
+    
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+} 
+
+
+
+.logo {
+    width: 261px;
+    height: 84px;
+}
+
+.icon {
+    font-size: 32px;
+}
+
+.list {
+    list-style-type: none;
+}
+
+a.link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.navList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+
+
+.dropdown {
+    padding: 1rem;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+    background: transparent;
+    color: #fff;
+}
+
+.option {
+    
+    color: black;
+}
+
+.dropdown:hover {
+    cursor: pointer;
+}
+
+.dropdown:focus {
+    outline: none;
+    
+}
+
+.btnGrp {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btnGrp a:nth-child(2) {
+    border: 1px solid var(--primary);
+    padding: 10px;
+    border-radius: 15px;
+    transition: all ease-in .3s;
+    position: relative;
+}
+
+.btnGrp a:nth-child(2) span{
+    position: relative;
+    z-index: 2;
+}
+
+.btnGrp a:nth-child(2):after {
+    position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--primary);
+  transition: all .35s;
+  border-radius: 15px;
+}
+
+.btnGrp a:nth-child(2):hover {
+    color: #fff;
+}
+
+.btnGrp a:nth-child(2):hover:after {
+    width: 100%;
+}
+
+
+
+

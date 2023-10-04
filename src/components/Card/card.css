@@ -1,0 +1,58 @@
+.container-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 80%;
+    height: 25rem;
+    background-color: #fffdd0;
+    padding: 2rem 1.25rem;
+    border-radius: 10px;
+    border: 2px solid black;
+    
+}
+
+
+.heading-card h4{
+    font-weight: bolder;
+    font-size: 22px;
+    font-family: sans-serif;
+    color: black;
+}
+
+.heading-card span {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.description-card {
+    padding: 2rem 1.25rem;
+    text-align: start;
+    
+}
+
+.btn {
+    padding: .5rem 3rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: sans-serif;
+    background-color: #fffdd0;
+    transition: .3s ease-in-out;
+    border: 2px solid gray;
+}
+
+.btn:hover {
+    background-color: #fff990;
+}
+
+
+@media screen and (min-width:0px) and (max-width: 700px) {
+    .container-card {
+        width: initial;
+        height:fit-content;
+
+        
+        
+    }
+} 

@@ -1,0 +1,57 @@
+.internshipSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15rem;
+}
+
+.cardContainer {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 720px) {
+    .internshipSection {
+        gap: 2rem;
+        flex-direction: column;
+    }
+
+    
+}
+
+@media screen and (min-width: 721px) and (max-width: 1024px) {
+    .internshipSection {
+        gap: 5rem;
+        flex-direction: column;
+    }
+
+    .cardContainer {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media screen  and (min-width: 1025px) and (max-width: 1280px) {
+    .internshipSection {
+        gap: 8rem;
+        
+    }
+
+   .cardContainer {
+    grid-template-columns: auto;
+   }
+    
+}
+
+
+@media screen  and (min-width: 0px) and (max-width: 470px) {
+.cardContainer {
+    gap: 1.5rem;
+    width: 100%;
+    grid-template-columns: 100%;
+    
+}
+}

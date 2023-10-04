@@ -1,0 +1,22 @@
+.icreate{
+    width: 192px;
+    /* border-top-width: medium; */
+    padding: 10px 50px;
+     margin-top: 2.5%; 
+    /* align-items: center; */
+    /* position: absolute; */
+    position: relative;
+    border: double;
+    background:lightblue;
+    /* top: 18%; */
+    display: inline-table;
+    font-size: x-large;
+    left: 30%;
+    border-radius: 5px;
+}
+@media screen and (max-width: 1020px) {
+    .icreate{
+    left: 0px;
+    padding: 2vw 12vh;
+    }
+}

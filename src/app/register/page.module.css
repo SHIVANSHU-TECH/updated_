@@ -1,0 +1,61 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input{
+  padding: 20px;
+  background-color: transparent;
+  border: 2px solid #bbb;
+  color:#bbb;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.button {
+  width: 300px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #53c28b;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  font-weight: bold;
+}
+@media screen and (min-width:100px) and (max-width: 250px) {
+  .container{
+    top: 20%;
+    position: absolute;
+    width: 70%;
+  }
+  .button{
+    width: 70%;
+  }
+  .form{
+    width:70%;
+  }  
+}
+@media screen and (min-width:251px) and (max-width: 705px) {
+  .container{
+    top: 20%;
+    position: absolute;
+    width:70%;
+}
+.button{
+  width:80%;
+}
+.form{
+  width:80%;
+}
+}
