@@ -7,6 +7,8 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import menu from "public/menu.png";
 import { AiOutlineMenu } from 'react-icons/ai';
+import { useRouter } from "next/navigation";
+
 //  import { themeContext } from "../../context/ThemeContext";
 const links = [
   {
@@ -42,8 +44,10 @@ const links = [
 ];
 
 const Navbar = () => {
+   const router = useRouter();
   const session = useSession();
   const [menuOpen, setMenuOpen]=useState(false)
+  const [logg, setlogg] = useState(false)
   // const [isDark, setIsDark]=useState(false);
   // const theme = useContext(themeContext);
   // const dark = theme.state.dark;
@@ -52,7 +56,28 @@ const Navbar = () => {
   // const containerStyle = {
   //   backgroundColor: isDarkTheme ? "#fff" : "#111",
   // };
-   
+   const handlesignOut =()=>{
+    localStorage.removeItem("token");
+    setlogg(false);
+    router.push("/")
+   }
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+      if( token && token.length > 0){
+        setlogg(true);
+        router.push("/")
+      }
+      else{
+        setlogg(false);
+        router.push("/login")
+      }
+
+
+  }, [localStorage.getItem("token")])
+  
+
+
   return (
     <div className={styles.container}  >
       <Link href="/" className={styles.logo}>
@@ -67,8 +92,8 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        {session.status === "authenticated" && (
-          <button className={styles.logout} onClick={signOut}>
+        {logg && (
+          <button className={styles.logout} onClick={()=>handlesignOut()}>
             Logout
           </button>
         )}
@@ -82,8 +107,8 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        {session.status === "authenticated" && (
-          <button className={styles.logout} onClick={signOut}>
+        {logg && (
+          <button className={styles.logout} onClick={()=>handlesignOut()}>
             Logout
           </button>
         )}

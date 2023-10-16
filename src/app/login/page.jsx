@@ -15,7 +15,12 @@ const Login = ({ url }) => {
   useEffect(() => {
     setError(params.get("error"));
     setSuccess(params.get("success"));
+
+
   }, [params]);
+
+  
+
 
   if (session.status === "loading") {
     return <p>Loading...</p>;
@@ -25,15 +30,38 @@ const Login = ({ url }) => {
     router?.push("/");
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
 
-    signIn("credentials", {
-      email,
-      password,
-    });
+   
+
+    try {
+      const res = await fetch("http://localhost:5000/api/v1/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          
+          email,
+          password,
+        }),
+      });
+      const data = await res.json();
+     if(data.success==true){
+      localStorage.setItem("token",data.token);
+      router.push("/");
+     }
+     else{
+
+      console.log("error while login",data);
+     } 
+    } catch (err) {
+      setError(err);
+      console.log(err);
+    }
   };
 
   return (

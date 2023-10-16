@@ -1,4 +1,159 @@
-.dashboardContainer {
+.container_Dashboard {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.6rem;
+    background-color: rgb(106, 106, 208);
+    padding: 1.5rem;
+    /* align-items: center; */
 }
+
+.Navmenu {
+    max-width: 300px;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.EventMenu {
+    padding: 1rem 1.256rem;
+    width: 100%;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    flex-direction: column;
+}
+
+.profile {
+    margin-top: 5rem;
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+.profile img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    overflow: none;
+    border-radius: 50%;
+}
+
+.text {
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.menuOptions {
+    gap: 1rem;
+    display: flex;
+    /* align-items:flex-end; */
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.menu {
+    padding: 1rem 1.25rem;
+    background-color: whitesmoke;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+
+.menu::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 2rem;
+    right: 0;
+    top: 0;
+    background-color: blueviolet;
+    transition: all .3s ease-in-out;
+}
+
+.menu:hover:after{
+    height: 3rem;
+}
+
+.logout {
+    background-color: whitesmoke;
+    font-weight: 700;
+    padding: 1rem 1.257rem;
+    margin-top: 2rem;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+.logout::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 2rem;
+    right: 0;
+    top: 0;
+    background-color: blueviolet;
+    transition: all .3s ease-in-out;
+    opacity: 0.2;
+}
+
+.logout:hover:after {
+    height: 3rem;
+}
+
+
+.heading {
+    font-weight: 800;
+    margin-top: 1rem;
+}
+
+.eventContainer {
+    padding: 1rem 1.25rem;
+    border: 1px solid grey;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    margin: 0.5rem 1rem;
+}
+
+.details {
+    max-width: 50%;
+}
+
+.evntName {
+    font-weight: 700;
+}
+
+.evntDate {
+    font-size: 14px;
+    font-weight: 300;
+    color: grey;
+}
+
+.actionBtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.actionBtns .accept button, .actionBtns .reject button {
+    padding: 10px ;
+    border: 1px solid grey;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+
+

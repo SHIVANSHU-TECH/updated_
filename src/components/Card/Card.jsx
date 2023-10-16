@@ -2,6 +2,7 @@ import React from "react";
 import "./card.css";
 import Link from "next/link";
 function Card(props) {
+  console.log(props);
   return (
     <div className="container-card">
       <div className="heading-card">

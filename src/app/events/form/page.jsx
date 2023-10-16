@@ -9,10 +9,47 @@ export default function eform() {
     const [event_category, setEvent_category] = useState('');
     const [eimg, setEimg] = useState('');
     const [elink, setElink] = useState('');
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
       e.preventDefault();
       console.log(event, date, desc, event_category, eimg, elink);
       
+
+      try {
+
+      
+
+
+        const res = await fetch("http://localhost:5000/api/v1/event/", {
+          method: "POST",
+          headers: {
+           
+            "Content-Type": "application/json",
+          },
+          body:{
+            title : `${event}`,
+            description:`${desc}`,
+            image:`${elink}`,
+            category:`${event_category}`,
+            link:`${elink}`,
+            DeadlineDate:`${data}`
+           
+          }
+
+        });
+        const data = await res.json();
+       if( data){
+       
+        console.log(data)
+       }
+       else{
+  
+        console.log("error while adding jobs",data);
+       } 
+      } catch (err) {
+      
+        console.log(err);
+      }
+
     };
     
   return (

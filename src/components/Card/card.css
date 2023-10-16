@@ -4,7 +4,7 @@
     justify-content: space-between;
     flex-direction: column;
     width: 80%;
-    height: 25rem;
+    height: max-content;
     background-color: #fffdd0;
     padding: 2rem 1.25rem;
     border-radius: 10px;
@@ -45,6 +45,13 @@
 .btn:hover {
     background-color: #fff990;
 }
+
+.img{
+    width: 100% ;
+
+    object-fit: cover;
+}
+
 
 
 @media screen and (min-width:0px) and (max-width: 700px) {
