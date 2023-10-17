@@ -16,7 +16,7 @@ const Register = () => {
     const password = e.target[2].value;
 
     try {
-      const res = await fetch("/api/auth/register", {
+      const res = await fetch("http://localhost:5000/api/v1/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +27,18 @@ const Register = () => {
           password,
         }),
       });
-      res.status === 201 && router.push("/login?success=Account has been created");
+      const data = await res.json();
+      if(data.success == true){
+        console.log("inLogin")
+        localStorage.setItem("token",data.token);
+
+        router.push("/login")
+      }
+      else{
+      
+        
+      console.log("error whole register",data.message);
+     } 
     } catch (err) {
       setError(err);
       console.log(err);

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import "@/app/globals.css";
 import "@/styles/spritual.module.css";
@@ -7,8 +8,49 @@ import Link from "next/link";
 import Section from "@/components/sectionEvent/section";
 import Card from "@/components/Card/CardEvent";
 import "../events/events.css";
+import { useEffect, useState } from "react";
 
 export default function page() {
+
+  const [AllEvents, setAllEvents] = useState([])
+  
+
+
+  useEffect(() => {
+
+    addEvents();
+
+  }, [])
+
+
+  const addEvents=async()=>{
+
+    try {
+      const res = await fetch("http://localhost:5000/api/v1/event/get", {
+        method: "GET",
+        headers: {
+         
+          "Content-Type": "application/json",
+        },
+       
+      });
+      const data = await res.json();
+     if(data.allEvents.length>0){
+      await setAllEvents(data.allEvents);
+      console.log(AllEvents)
+     }
+     else{
+
+      console.log("error while adding Events",data);
+     } 
+    } catch (err) {
+      setError(err);
+      console.log(err);
+    }
+  }
+  
+
+
   return (
     <main>
       <Landing />
@@ -61,6 +103,19 @@ export default function page() {
           />
         </div>
       </Section>
+    
+    
+{AllEvents.length > 0 &&
+        AllEvents.map((event) => (
+          <Section key={event._id} ID={event.category} title={event.title} link={event.image}>
+            <div className="cardContainer">
+              <Card title={event.title} date={event.DeadlineDate} desc={event.description} mainLink={event.link} image={event.image} />
+            
+            </div>
+          </Section>
+        ))}
+    
+
     </main>
   );
 }

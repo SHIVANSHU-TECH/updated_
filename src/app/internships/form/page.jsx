@@ -9,9 +9,44 @@ export default function eform() {
   const [vdate, setVdate] = useState('');
   const [jd, setJd] = useState('');
   const [jl, setJl] = useState('');
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     console.log(post, cname, vdate, jd, jl);
+    try {
+
+      
+
+
+      const res = await fetch("http://localhost:5000/api/v1/opp/", {
+        method: "POST",
+        headers: {
+         
+          "Content-Type": "application/json",
+        },
+        body:{
+          title : `${post}`,
+          description:`${jd}`,
+          
+          
+          link:`${jl}`,
+          DeadlineDate:`${vdate}`
+         
+        }
+
+      });
+      const data = await res.json();
+     if( data){
+     
+      console.log(data)
+     }
+     else{
+
+      console.log("error while adding jobs",data);
+     } 
+    } catch (err) {
+    
+      console.log(err);
+    }
     
   };
   return (
