@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+}
+
+tr {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    
+}
+
+td {
+    margin-top: .5rem;
+    text-align: center;
+
+}
+

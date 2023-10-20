@@ -1,4 +1,22 @@
 .dashboardContainer {
-    display: grid;
-    grid-template-columns: 20% 80%;
+    display: flex;
+    grid-template-columns: 25% 75%;
+    height: 100%;
+    gap: 15rem;
+}
+
+
+.recents {
+    display: flex;
+    gap: 2rem;
+    
+
+}
+
+.recentTables {
+    margin-top: 2rem;
+    background-color: white;
+    border-radius: 30px;
+    width: 100%;
+    padding: 2rem;
 }

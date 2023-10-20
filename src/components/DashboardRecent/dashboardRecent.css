@@ -1,0 +1,50 @@
+.recent-container {
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    max-height: 15rem;
+    background-color: white;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 18px;
+    border-radius: 30px;
+    /* margin-left: 50%; */
+}
+
+.recent-heading {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.overlay {
+    
+    margin-top: 25px;
+    font-size: 136px;
+    color: indigo;
+    opacity: .3;
+}
+
+
+
+.data {
+    position: absolute;
+    font-size: 140px;
+    color: black;
+    left: 5px;
+    top: 15px;
+    transition: ease-in-out .3s;
+    cursor: pointer;
+}
+
+.data:hover {
+    left: 2px;
+    top: 12px;
+}
