@@ -1,0 +1,31 @@
+.image {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  
+img {
+  background: white;
+    width: 40px;
+    height: 40px;
+  }
+table{
+    width: auto;
+}
+.th{
+    height:70px;
+    font-weight: 700;
+}
+th, td {
+  /* border-bottom: 1px solid #ddd; */
+  font-family: 'montserrat';
+  text-align: center;
+  width: auto;
+  line-height: 2;
+}
+.data-entry{
+    height: 50;
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .recent-container {
     display: flex;
     flex-direction: column;
@@ -47,4 +48,22 @@
 .data:hover {
     left: 2px;
     top: 12px;
+=======
+table{
+    width: auto;
+}
+.th{
+    height:70px;
+    font-weight: 700;
+}
+th, td {
+  /* border-bottom: 1px solid #ddd; */
+  font-family: 'montserrat';
+  text-align: center;
+  width: auto;
+  line-height: 2;
+}
+.data-entry{
+    height: 50;
+>>>>>>> a1905e9f3a707821294f714ce4230c42b4e80b97
 }
